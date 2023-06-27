@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Assignment3</title>
+    <style>
+        /* Initial image size */
+        .image {
+            width: 200px;
+            height: 200px;
+            transition: width 0.3s, height 0.3s;
+        }
+
+        /* Center align the target cell */
+        #targetCell {
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        /* Ensure images within target cell in large size */
+        #targetCell img {
+            max-width: 500px;
+            max-height: 500px;
+        }
+
+        /* Center align the cell contents */
+        .cell {
+            text-align: center;
+        }
+
+        /* Apply styling for selected image */
+        .selected {
+            height: auto;
+            width: auto;
+        }
+        
+    </style>
+</head>
+
+<body> 
+            <!-- table is used to insert the image to be clicked -->
+            <table border="1">
+        <tr>
+            <td class="cell">
+                <div onclick="enlargeImage(this)"><img src="shoe1.jpg" alt="Item 1" class="image"></div>
+            </td>
+            <td class="cell">
+                <div onclick="enlargeImage(this)"><img src="shoe2.jpg" alt="Item 2" class="image"></div>
+            </td>
+            <td class="cell">
+                <div onclick="enlargeImage(this)"><img src="shoe3.jpg" alt="Item 3" class="image"></div>
+            </td>
+            <td class="cell">
+                <div onclick="enlargeImage(this)"><img src="shoe4.jpg" alt="Item 4" class="image"></div>
+            </td>
+        </tr>
+        <tr>
+            <td class="cell">
+                <div onclick="enlargeImage(this)"><img src="shoe5.jpg" alt="Item 5" class="image"></div>
+            </td>
+
+            <!-- Define targetCell with rowspan and colspan -->
+            <td id="targetCell" class="cell" rowspan="2" colspan="2">
+                <!-- Container for the enlarged image -->
+                <div id="enlargedContainer" style="display: none;">
+                    <img id="enlargedImage" src="" alt="Enlarged Image">
+                </div>
+            </td>
+            <td class="cell">
+                <div onclick="enlargeImage(this)"><img src="shoe6.jpg" alt="Item 6" class="image"></div>
+            </td>
+        </tr>
+        <tr>
+            <td class="cell">
+                <div onclick="enlargeImage(this)"><img src="shoe7.jpg" alt="Item 7" class="image"></div>
+            </td>
+            <td class="cell">
+                <div onclick="enlargeImage(this)"><img src="shoe8.jpg" alt="Item 8" class="image"></div>
+            </td>
+        </tr>
+        <tr>
+            <td class="cell">
+                <div onclick="enlargeImage(this)"><img src="shoe9.jpg" alt="Item 9" class="image"></div>
+            </td>
+            <td class="cell">
+                <div onclick="enlargeImage(this)"><img src="shoe10.jpg" alt="Item 10" class="image"></div>
+            </td>
+            <td class="cell">
+                <div onclick="enlargeImage(this)"><img src="shoe11.jpg" alt="Item 11" class="image"></div>
+            </td>
+            <td class="cell">
+                <div onclick="enlargeImage(this)"><img src="shoe12.jpg" alt="Item 12" class="image"></div>
+            </td>
+        </tr>
+    </table>
+
+    <script>
+        // Function to enlarge the clicked image
+        function enlargeImage(item) {
+            var clickedImage = item.querySelector('img');
+            var enlargedImage = document.getElementById('enlargedImage');
+            enlargedImage.src = clickedImage.src;
+            document.getElementById('enlargedContainer').style.display = 'block';
+        }
+    </script>
+</body>
+
+</html>
